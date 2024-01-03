@@ -4,12 +4,14 @@ import numpy as np
 import pickle
 import joblib
 
-load_model,ref_columns,_=joblib.load(r'C:\Users\Navaneeth\Desktop\Python\model.pkl')
+with open(r'C:\Users\Navaneeth\Desktop\Python\model1.pkl', 'rb') as file:
+    loaded_content = pickle.load(file)
+    st.write(loaded_content)
 
 def prediction(input_data):
     input_array = np.array(input_data).reshape(1, -1)
-    df1 = pd.DataFrame(input_array, columns=ref_columns)
-    prediction_made=load_model.predict(df1)
+    df1 = pd.DataFrame(input_array, columns=['Age','Sex','Chest pain type','BP','Cholesterol','FBS over 120','EKG results','Max HR','Exercise angina','ST depression','Slope of ST','Number of vessels fluro','Thallium'])
+    prediction_made=loaded_content.predict(df1)
     print(prediction_made)
     if(prediction_made[0]==1):
         return{"Person has heart disease"}
