@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-import joblib
-
 with open(r'C:\Users\Navaneeth\Desktop\Python\model1.pkl', 'rb') as file:
     loaded_content = pickle.load(file)
     st.write(loaded_content)
