@@ -5,8 +5,7 @@ import pickle
 import subprocess
 subprocess.call(["pip", "list"])
 subprocess.call(["pip", "install", "scikit-learn==1.3.1"])
-from sklearn.linear_model import LogisticRegression
-
+from sklearn import LogisticRegression
 loaded_content=pickle.load(open('model.sav','rb'))
 
 def prediction(input_data):
