@@ -2,9 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-with open('model1.pkl', 'rb') as file:
-    loaded_content = pickle.load(file)
-    st.write(loaded_content)
+loaded_content=pickle.load(open('model.sav','rb'))
 
 def prediction(input_data):
     input_array = np.array(input_data).reshape(1, -1)
