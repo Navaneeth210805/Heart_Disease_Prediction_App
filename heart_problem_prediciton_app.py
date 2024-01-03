@@ -42,10 +42,22 @@ def main():
         fbs_over_120=0
     ekg_results = st.text_input("ElectroCardiographic Results",0)
     max_hr = st.text_input("Max Heart Rate",130)
-    exercise_angina = st.radio("Exercise induced Angina",[0,1])
+    exercise_angina = st.radio("Exercise induced Angina",['Yes','No'])
+    if(exercise_angina)=='Yes':
+        exercise_angina=1
+    else:
+        exercise_angina=0
     st_depression = st.text_input("ST Depression",0)
     slope_of_st = st.text_input("Slope of ST",0)
-    num_vessels_fluro = st.radio("Number of vessels flourosopy",[0,1,2,3])
+    num_vessels_fluro = st.radio("Number of vessels flourosopy",["No blood vessels are visible or identified in the fluoroscopy images","One blood vessel is visible or identified","Two blood vessels are visible or identified","Three blood vessels are visible or identified"])
+    if(num_vessels_fluro)=='No blood vessels are visible or identified in the fluoroscopy images':
+        num_vessels_fluro=0
+    elif(num_vessels_fluro)=="One blood vessel is visible or identified":
+        num_vessels_fluro=1
+    elif (num_vessels_fluro)=="Two blood vessels are visible or identified":
+        num_vessels_fluro=2
+    else:
+        num_vessels_fluro=3
     thallium = st.radio("Thallium",["Normal","Fixed Defect","Reversable defect"])
     if thallium=="Normal":
         thallium=3
