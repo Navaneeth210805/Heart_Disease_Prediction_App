@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-from sklearn import LogisticRegression
+from sklearn.linear_model import LogisticRegression
 loaded_content=pickle.load(open('model.sav','rb'))
 
 def prediction(input_data):
