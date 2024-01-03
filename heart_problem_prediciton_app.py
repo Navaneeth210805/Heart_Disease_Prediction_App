@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import subprocess
+subprocess.call(["pip", "list"])
 subprocess.call(["pip", "install", "scikit-learn==1.3.1"])
 from sklearn.linear_model import LogisticRegression
 
